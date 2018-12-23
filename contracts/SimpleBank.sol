@@ -44,7 +44,7 @@ contract SimpleBank {
     // allows function to run locally/off blockchain
     function balance() public view returns (uint) {
         /* Get the balance of the sender of this transaction */
-        return(balances[msg.sender]);  
+        return balances[msg.sender];
     }
 
     /// @notice Enroll a customer with the bank
@@ -65,9 +65,8 @@ contract SimpleBank {
         /* Add the amount to the user's balance, call the event associated with a deposit,
           then return the balance of the user */
         balances[msg.sender] += msg.value;
-        owner.transfer(msg.value);
-	    emit LogDepositMade(msg.sender, msg.value);
-	    return(balances[msg.sender]);
+	emit LogDepositMade(msg.sender, msg.value);
+	return balances[msg.sender];
     }
 
     /// @notice Withdraw ether from bank
@@ -83,8 +82,8 @@ contract SimpleBank {
         require(balances[msg.sender] >= withdrawAmount);
         msg.sender.transfer(withdrawAmount);
         balances[msg.sender] -= withdrawAmount;
-        return balances[msg.sender];
         emit LogWithdrawl(msg.sender, withdrawAmount, address(balances[msg.sender]));
+        return balances[msg.sender];
     }
 
     // Fallback function - Called if other functions don't match call or
