@@ -83,7 +83,7 @@ contract SimpleBank {
         msg.sender.transfer(withdrawAmount);
         balances[msg.sender] -= withdrawAmount;
         emit LogWithdrawl(msg.sender, withdrawAmount, address(balances[msg.sender]));
-        return balances[msg.sender];
+        return balances();
     }
 
     // Fallback function - Called if other functions don't match call or
