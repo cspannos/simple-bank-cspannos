@@ -74,7 +74,7 @@ contract SimpleBank {
     /// @param withdrawAmount amount you want to withdraw
     /// @return The balance remaining for the user
     // Emit the appropriate event
-    function withdrawl(uint withdrawAmount) public payable returns (uint) {
+    function withdraw(uint withdrawAmount) public payable returns (uint) {
         /* If the sender's balance is at least the amount they want to withdraw,
            Subtract the amount from the sender's balance, and try to send that amount of ether
            to the user attempting to withdraw.
@@ -82,6 +82,7 @@ contract SimpleBank {
         if (withdrawAmount <= balances[msg.sender]) {
             balances[msg.sender] -= withdrawAmount;
             msg.sender.transfer(withdrawAmount);
+            emit LogWithdrawl(msg.sender, withdrawAmount, address (balances[msg.sender]);
         }
         return balances[msg.sender];
     }
