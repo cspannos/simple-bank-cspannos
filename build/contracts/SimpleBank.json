@@ -3948,12 +3948,12 @@
     "4447": {
       "events": {},
       "links": {},
-      "address": "0x0F722e36732F1c94cE294C674470c78be919714E",
-      "transactionHash": "0x2eaa80a58fe79f537bdae289cdc52e8da955b3bd26e7548d98823af4966397a1"
+      "address": "0xBd92197c79DFBeAcb65A4A822C442Ff9aA0B52d6",
+      "transactionHash": "0x53fe0fa3d20ef20c20f4b9639e707850ed48dc16af5f24d4725c3821b29260ba"
     }
   },
   "schemaVersion": "3.0.0",
-  "updatedAt": "2018-12-26T16:37:22.013Z",
+  "updatedAt": "2018-12-26T17:09:03.102Z",
   "devdoc": {
     "methods": {
       "balance()": {
